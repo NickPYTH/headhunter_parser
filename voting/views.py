@@ -120,7 +120,7 @@ def index(request):
                 'working_time_modes', 'accept_temporary', 'department', 'response_letter_required',
                 'has_test', 'id'], axis='columns', inplace=True)
         df.reset_index().to_csv('hh.csv', header=False, index=False)
-
+        print(df.head)
         my_stop_words = [',', '.', '...', '/', '<', '>', '/highlighttext', '(', ')'
         ,'highlighttext', '&', 'quot', ';', 'c', ':', ':', '»', '«', 'т.е', '–', '-' ]
         for word in my_stop_words:

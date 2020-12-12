@@ -72,12 +72,12 @@
         </form>
         
         {% if results == 1 %}
-            <div class="head mb-5">
+            <div class="head mb-5 d-none d-lg-block d-xl-block">
                 <h1>Анализ по словосочетаниям <span class="badge badge-secondary">New</span></h1>
             </div>
 
             <div class="row mb-5">
-                <div class="col-4">
+                <div class="col-lg-4 col-12">
                     <ul id="lst" class="list-group m-5">
                     {%for el in res.data%}
                         <li class="list-group-item d-flex justify-content-between align-items-center mb-1">
@@ -88,7 +88,7 @@
                     </ul>
                 </div>
 
-                <div class="col-8">
+                <div class="col-lg-8 col-12 d-none d-lg-block d-xl-block">
                     <canvas id="oilChart1" width="600" height="400"></canvas>
                 </div>
             </div>
@@ -143,6 +143,10 @@
             ],
             datasets: [
                 {
+                    barPercentage: 0.5,
+                    barThickness: 80,
+                    maxBarThickness: 90,
+                    minBarLength: 2,
                     data: [
                         lst_val[1],
                         lst_val[2],
@@ -154,6 +158,7 @@
                         lst_val[8],
                         lst_val[9],
                         lst_val[10],
+                        0,
                     ],
                     backgroundColor: [
                         "#1E90FF",
@@ -175,6 +180,7 @@
         type: 'pie',
         data: oilData
         });
+
     </script>
 
 
